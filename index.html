@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafizah Naila</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .profile-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            width: 90%;
+            max-width: 350px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff6f61;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .name {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .romantic-quote {
+            font-size: 1rem;
+            color: #555;
+            font-style: italic;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Tombol Putar Musik */
+        .play-button {
+            position: fixed;
+            bottom: 20px;
+            left: 90%;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .play-button:hover {
+            background-color: #ff4f3d;
+        }
+
+        @media (max-width: 768px) {
+            .profile-card {
+                padding: 15px;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .name {
+                font-size: 16rem;
+            }
+
+            .romantic-quote {
+                font-size: 14rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-card">
+        <img src="naila.jpeg" alt="Profil" class="profile-image">
+        <h1 class="name">Hafizah Naila Syaf, S. Kep</h1>
+        <p class="romantic-quote">
+            "Selamat Lulus Kuliah dan senang bisa bertemu denganmu. Semoga perjalananmu selalu dipenuhi kebahagiaan dan keberkahan."
+        </p>
+    </div>
+    <div class="footer">
+        Created by Muhammad Riski Fauzi
+    </div>
+
+    <!-- Elemen audio untuk latar belakang tanpa kontrol -->
+    <audio id="background-music" loop>
+        <source src="naila.mp3" type="audio/mp3">
+        <source src="naila.ogg" type="audio/ogg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Tombol Putar Musik -->
+    <button class="play-button" onclick="playMusic()">Putar Musik</button>
+
+    <script>
+        // Fungsi untuk memutar musik
+        function playMusic() {
+            var audio = document.getElementById('background-music');
+            audio.play(); // Memulai pemutaran audio
+        }
+    </script>
+</body>
+
+</html>
